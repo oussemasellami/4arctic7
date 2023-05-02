@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Product } from '../model/product';
+import { ProductCardComponent } from '../product-card/product-card.component';
 
 @Component({
   selector: 'app-product',
@@ -12,9 +13,10 @@ name="bonjour 4ARCTIC 7"
 prop:boolean=false
 message:string=''
 prop1="bonjour"
-prixMax:number=0;
+prixMax:number=null;
 listProduct:Product[]=[]
-
+@ViewChild(ProductCardComponent)
+private x:ProductCardComponent;
 
   constructor() { }
 
@@ -37,7 +39,11 @@ buy(i:number){
   this.listProduct[i].quantity=this.listProduct[i].quantity -1
 
 }
-like(i:number){
+like(prod:Product){
+  let i=this.listProduct.indexOf(prod)
   this.listProduct[i].like=this.listProduct[i].like +1
+}
+appStart(){
+  this.x.start();
 }
 }

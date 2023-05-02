@@ -18,11 +18,12 @@ import { AnnModule } from './ann/ann.module';
 import { EtudiantComponent } from './etudiant/etudiant.component';
 
 import { FormproductComponent } from './formproduct/formproduct.component';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 
 const ROUTES:Routes=[
 {path:'',redirectTo:'home', pathMatch:'full'},
- {path:'home',component:HomeComponent} ,
+ {path:'home',component:ProductComponent} ,
  {path:'product',component:FormproductComponent} ,
  {path:'**',component:NotfoundComponent}
 ]
@@ -39,6 +40,7 @@ const ROUTES:Routes=[
     NotfoundComponent,
     FormProductComponent,
     FormproductComponent,
+    ProductCardComponent,
    
    
   ],
