@@ -23,13 +23,11 @@ export class TodoComponent implements OnInit {
   }
 
   getnbrcompleted(){
-    
-    this.completed=this.calculService.getNumberOf(this.todolist,'completed',true)
-    console.log(this.completed)
+    this.completed=this.calculService.getNumberOf(this.todolist,"completed",true)
 
   }
   getnbruncompleted(){
-    this.uncompleted=this.calculService.getNumberOf(this.todolist,'completed',false)
+    this.uncompleted=this.calculService.getNumberOf(this.todolist,"completed",false)
   }
 
 }

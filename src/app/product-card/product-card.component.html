@@ -12,6 +12,7 @@
     <h5 class="card-title">Quantity:{{ Prod.quantity }}</h5>
     <h5 class="card-title">Like:{{ Prod.like }}</h5>
 
+    <button type="submit" class="btn btn-dark" [routerLink]="['/edit',Prod.id]">update</button>
     <button type="submit" class="btn btn-primary">like</button>
     <button
       type="submit"

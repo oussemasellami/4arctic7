@@ -10,7 +10,7 @@ export class CalculService {
   getNumberOf(list:any[], critiria:string, value:any){
 let n=0
 for( let i of list){
-  if(list[i][critiria] === value){
+  if(i[critiria] == value){
     n++
   }
 }

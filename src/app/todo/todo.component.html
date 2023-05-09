@@ -1,12 +1,12 @@
 <div class="container">
-<div *ngFor="let todo of todolist ">
+<div *ngFor="let todo of todolist; let index ">
 {{todo|json}}
 
 </div>
 
 <button class="btn btn-success" (click)="getnbrcompleted()">Nombre completed</button>
-<div *ngIf="completed" class="alert alert-danger">nombre completed : {{completed}}</div>
-<button class="btn btn-success" (click)="getnbruncompleted()">Nombre completed</button>
-<div *ngIf="uncompleted" class="alert alert-danger">nombre completed : {{uncompleted}}</div>
+<div  *ngIf="completed" class="alert alert-danger"> {{ completed }}</div>
+<button class="btn btn-success" (click)="getnbruncompleted()">Nombre uncompleted</button>
+<div *ngIf="uncompleted" class="alert alert-danger"> {{ uncompleted }}</div>
 
 </div>

@@ -16,15 +16,18 @@ import { AddComponent } from './ann/add/add.component';
 import { ListComponent } from './ann/list/list.component';
 import { AnnModule } from './ann/ann.module';
 import { EtudiantComponent } from './etudiant/etudiant.component';
-
+import{HttpClientModule} from "@angular/common/http"
 import { FormproductComponent } from './formproduct/formproduct.component';
 import { ProductCardComponent } from './product-card/product-card.component';
+import { AddproductComponent } from './addproduct/addproduct.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
 
 
 const ROUTES:Routes=[
 {path:'',redirectTo:'home', pathMatch:'full'},
  {path:'home',component:ProductComponent} ,
- {path:'product',component:FormproductComponent} ,
+ {path:'product',component:AddproductComponent} ,
+ {path:'edit/:id',component:EditProductComponent} ,
  {path:'todo',component:TodoComponent} ,
  {path:'**',component:NotfoundComponent}
 ]
@@ -42,6 +45,8 @@ const ROUTES:Routes=[
     FormProductComponent,
     FormproductComponent,
     ProductCardComponent,
+    AddproductComponent,
+    EditProductComponent,
    
    
   ],
@@ -49,6 +54,7 @@ const ROUTES:Routes=[
     BrowserModule,
     FormsModule,
     AnnModule,
+    HttpClientModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [],
