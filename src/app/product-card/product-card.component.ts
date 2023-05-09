@@ -6,7 +6,7 @@ import { Product } from '../model/product';
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.css']
 })
-export class ProductCardComponent implements OnInit ,OnChanges,AfterViewInit {
+export class ProductCardComponent implements OnInit ,OnChanges {
   @Input()Prod:Product={
     id:0,
     title:"",
@@ -28,9 +28,7 @@ export class ProductCardComponent implements OnInit ,OnChanges,AfterViewInit {
   }
 
   constructor() { }
-  ngAfterViewInit(): void {
-  console.log("aaaaaaaaaaa")
-  }
+ 
   ngOnChanges(changes: SimpleChanges): void {
  console.log(changes)
   }

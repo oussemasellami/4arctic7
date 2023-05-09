@@ -1,18 +1,12 @@
-<p>todo works!</p>
+<div class="container">
+<div *ngFor="let todo of todolist ">
+{{todo|json}}
 
-<table border="3">
-  <tr>
-    <td>id</td>
-    <td>title</td>
-    <td>price</td>
-    <td>quantity</td>
-    <td>like</td>
-  </tr>
-  <tr *ngFor="let p of listproduct">
-    <td>{{ p.id }}</td>
-    <td>{{ p.title }}</td>
-    <td>{{ p.price }}</td>
-    <td>{{ p.quantity }}</td>
-    <td>{{ p.like }}</td>
-  </tr>
-</table>
+</div>
+
+<button class="btn btn-success" (click)="getnbrcompleted()">Nombre completed</button>
+<div *ngIf="completed" class="alert alert-danger">nombre completed : {{completed}}</div>
+<button class="btn btn-success" (click)="getnbruncompleted()">Nombre completed</button>
+<div *ngIf="uncompleted" class="alert alert-danger">nombre completed : {{uncompleted}}</div>
+
+</div>

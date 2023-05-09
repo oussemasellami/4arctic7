@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import{todo} from '../model/todo';
+import { CalculService } from '../services/calcul.service';
 
 @Component({
   selector: 'app-todo',
@@ -7,15 +8,28 @@ import{todo} from '../model/todo';
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent implements OnInit {
-listproduct:todo[]=[]
-  constructor() { }
+  todolist:todo[]=[]
+  completed:number;
+  uncompleted:number;
+  constructor(private calculService:CalculService) { }
 
   ngOnInit(): void {
 
-    this.listproduct=[
-      {id: 1, title: "T-shirt 1", price: 18, quantity: 0, like: 0},
-      {id: 2, title: "T-shirt 2", price: 21, quantity: 10, like: 0},
-      {id: 3, title: "T-shirt 3", price: 16, quantity: 8, like: 0}, ]
+    this.todolist=[
+      {"userId": 1, "id": 1, "title": "delectus aut autem","completed": false},
+      {"userId": 1, "id": 2, "title": "quis ut nam facilis et officia qui", "completed": false},
+      {"userId": 1, "id": 3, "title": "fugiat veniam minus", "completed": false},
+      {"userId": 1, "id": 4, "title": "quo adipisci enim quam utab", "completed": true}];
+  }
+
+  getnbrcompleted(){
+    
+    this.completed=this.calculService.getNumberOf(this.todolist,'completed',true)
+    console.log(this.completed)
+
+  }
+  getnbruncompleted(){
+    this.uncompleted=this.calculService.getNumberOf(this.todolist,'completed',false)
   }
 
 }

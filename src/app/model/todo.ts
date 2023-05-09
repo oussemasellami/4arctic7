@@ -1,7 +1,6 @@
 export class todo{
-    id:any;
-    title:any;
-    price:any;
-    quantity:any ;
-    like:any;
-}
+    userId:number;
+    id:number;
+    title:string;
+    completed:boolean;
+    }

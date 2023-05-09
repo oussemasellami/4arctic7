@@ -25,6 +25,7 @@ const ROUTES:Routes=[
 {path:'',redirectTo:'home', pathMatch:'full'},
  {path:'home',component:ProductComponent} ,
  {path:'product',component:FormproductComponent} ,
+ {path:'todo',component:TodoComponent} ,
  {path:'**',component:NotfoundComponent}
 ]
 
